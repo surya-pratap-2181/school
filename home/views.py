@@ -10,6 +10,10 @@ def home(request):
     return render(request, 'home/home.html', {'home1': data1, 'home2': data2, 'cards': cards})
 
 
+def contact(request):
+    return render(request, 'home/contact.html')
+
+
 def about(request):
     message = Content.objects.get(pk=4)
     return render(request, 'home/about.html', {'data': message})
