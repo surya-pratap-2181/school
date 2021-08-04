@@ -1,0 +1,18 @@
+{% extends 'home/base.html' %}
+{% block title %}
+Principal Message
+{% endblock title %}
+{% block body %}
+<div class="row p-md-5 rounded">
+    <div class="col-md-7 px-3">
+        <h1 class="display-4 text-center">{{data.title}}</h1>
+        <p class="my-4 text-monospace">{{data.description}}</p>
+        <p class="mb-0 text-right text-muted">{{data.name}}</p>
+        <p class="mb-0 text-right text-muted">{{data.position}}</p>
+    </div>
+
+    <div class="col-md-5 px-5">
+        <img src="{{data.photo.url}}" alt="Principal's Image" style="width: 500px; height: 500px;" srcset="">
+    </div>
+</div>
+{% endblock body %}
