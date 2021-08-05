@@ -10,8 +10,18 @@ def home(request):
     return render(request, 'home/home.html', {'home1': data1, 'home2': data2, 'cards': cards})
 
 
+def facilities(request):
+    facilities = Content.objects.filter(category='Facilities')
+    return render(request, 'home/facilities.html', {'facilities': facilities})
+
+
 def contact(request):
     return render(request, 'home/contact.html')
+
+
+def academic(request):
+    academics = Content.objects.filter(category='Academic Details')
+    return render(request, 'home/academic.html', {'academics': academics})
 
 
 def about(request):

@@ -1,0 +1,18 @@
+{% extends 'home/base.html' %}
+{% block title %}
+Academic Details
+{% endblock title %}
+{% block body %}
+<h1 class="text-center my-4" style="font-family: Satisfy;">Academic Details</h1>
+<div class="container">
+    {% for i in academics %}
+    <div class="media my-2">
+        <div class="media-body">
+            <h5 class="mt-0">{{i.title}}</h5>
+            <p>{{i.description}}</p>
+        </div>
+        <img src="{{i.photo.url}}" style="height: 240px; width: 240px;" class="align-self-center mr-3" alt="...">
+    </div>
+    {% endfor %}
+</div>
+{% endblock body %}
