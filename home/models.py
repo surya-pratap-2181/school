@@ -10,3 +10,13 @@ class Content(models.Model):
     name = models.CharField(max_length=100)
     position = models.CharField(max_length=100)
     photo = models.ImageField(upload_to='Images', blank=True)
+
+
+class Glimpses(models.Model):
+    name = models.TextField()
+
+
+class GlimpsesImage(models.Model):
+    glimpses = models.ForeignKey(
+        Glimpses, related_name='images', on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='glimpses', blank=True)

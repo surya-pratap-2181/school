@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from home.models import Content
+from home.models import Content, Glimpses
 # Create your views here.
 
 
@@ -32,3 +32,16 @@ def administrator(request):
 def president(request):
     message = Content.objects.get(pk=3)
     return render(request, 'home/president.html', {'data': message})
+
+
+def glimpses(request):
+    # luckydraw images fetch
+    luckydraw = Glimpses.objects.get(pk=1)
+    luckydraw_image = luckydraw.images.all()
+    # Pariksha Images fetch
+    pariksha = Glimpses.objects.get(pk=2)
+    pariksha_image = pariksha.images.all()
+    # yoga day images fetch
+    yogaday = Glimpses.objects.get(pk=3)
+    yogaday_image = yogaday.images.all()
+    return render(request, 'home/glimpses.html', {'luckydraw_image': luckydraw_image, 'pariksha_image': pariksha_image, 'yogaday_image': yogaday_image})
